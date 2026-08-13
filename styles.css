@@ -1912,6 +1912,39 @@ ul {
     display: block;
   }
 
+  /* Mobile Logo Alignment & Smaller Subtitle Text */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .brand-logo-img {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .logo-title {
+    font-size: 1.05rem;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .logo-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 0.2px;
+    line-height: 1.15;
+    margin-top: 1px;
+    opacity: 0.9;
+  }
+
   /* Hide crowded top header Apply button on mobile screens */
   .header-actions .header-apply-btn {
     display: none;
