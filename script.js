@@ -337,23 +337,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (boothCounter) boothCounter.textContent = `${index + 1}/37`;
     }
 
-    const boothPrevBtn = document.getElementById('boothPrevBtn');
-    const boothNextBtn = document.getElementById('boothNextBtn');
     const boothImgContainer = document.getElementById('boothImgContainer');
 
-    if (boothPrevBtn) {
-      boothPrevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentBoothIndex = (currentBoothIndex - 1 + boothData.length) % boothData.length;
-        updateBooth(currentBoothIndex);
-      });
-    }
-
-    if (boothNextBtn) {
-      boothNextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentBoothIndex = (currentBoothIndex + 1) % boothData.length;
-        updateBooth(currentBoothIndex);
+    if (heroPhotoBooth) {
+      heroPhotoBooth.addEventListener('click', (e) => {
+        openLightbox(currentBoothIndex);
       });
     }
 
