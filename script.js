@@ -396,6 +396,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
     if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+    if (photoLightbox) {
+      photoLightbox.addEventListener('click', (e) => {
+        if (e.target === photoLightbox || e.target.classList.contains('lightbox-content') || e.target === lightboxBackdrop) {
+          closeLightbox();
+        }
+      });
+    }
 
     document.addEventListener('keydown', (e) => {
       if (!photoLightbox || !photoLightbox.classList.contains('active')) return;
