@@ -145,19 +145,13 @@
         <h1 class="hero-title">
           Empowering Tomorrow's <span>Finance Leaders & CAs</span>
         </h1>
-        <!-- Interactive 37-Image Photo Booth -->
-        <div class="hero-photo-booth" id="heroPhotoBooth" style="margin: 1.5rem 0;">
-          <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-radius: 16px; padding: 1.25rem; border: 2px solid var(--accent-gold); box-shadow: 0 15px 35px rgba(0,0,0,0.3); text-align: center; max-width: 440px; position: relative;">
-            <div style="background: var(--accent-crimson); color: var(--accent-gold); font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.85rem; padding: 0.3rem 1rem; border-radius: 20px; text-transform: uppercase; display: inline-block; margin-bottom: 0.75rem; letter-spacing: 1px;">CONGRATULATIONS</div>
-            
-            <div style="width: 240px; height: 240px; border-radius: 16px; border: 4px solid var(--accent-gold); margin: 0 auto 0.75rem auto; overflow: hidden; background: #ffffff; padding: 4px; box-shadow: 0 6px 15px rgba(212,175,55,0.4); cursor: pointer;" id="boothImgContainer" title="Click to view full screen">
-              <img src="assets/student1.jpg" alt="Student Achiever" id="boothImg" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px; background: #ffffff;">
-            </div>
-
-            <div style="background: var(--accent-crimson); color: var(--accent-gold); font-size: 0.65rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 6px; text-transform: uppercase; margin-bottom: 0.75rem; letter-spacing: 0.5px;">THANKS FOR CELEBRATING WITH NATIONAL CA ACADEMY</div>
-            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(15,35,56,0.06); padding: 0.4rem 0.85rem; border-radius: 8px;">
-              <span id="boothName" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1rem; color: var(--primary-dark);">STUDENT ACHIEVER</span>
-              <span id="boothCounter" style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); background: #fff; padding: 0.15rem 0.5rem; border-radius: 12px;">1/37</span>
+        <!-- Clean Photo Showcase Box (Header Photo Card with Hover Overlay) -->
+        <div class="hero-photo-booth" id="heroPhotoBooth">
+          <div class="hero-photo-card" id="boothImgContainer" title="Click to view full screen">
+            <img src="assets/student1.jpg" alt="Student Achiever" id="boothImg">
+            <div class="booth-hover-overlay">
+              <span id="boothName" class="booth-hover-name">BINDIYA</span>
+              <span id="boothCounter" class="booth-hover-counter">1/33</span>
             </div>
           </div>
         </div>
@@ -576,6 +570,99 @@
     </div>
   </section>
 
+  <!-- 9.5 VISUAL STUDENT ACHIEVERS & RANKERS SHOWCASE WALL -->
+  <section id="achievers" class="achievers-section section-padding">
+    <div class="container">
+      <div class="section-header" style="color: #fff;">
+        <span class="section-label" style="color: var(--accent-gold);">Hall of Fame</span>
+        <h2 class="section-title" style="color: #fff;">NCA Student Achievers & Rankers</h2>
+        <p class="section-desc" style="color: #cbd5e1;">Celebrating the outstanding achievements, national ranks, and distinction scores of our hard-working students.</p>
+      </div>
+
+      <div class="achievers-grid">
+        <!-- Achiever Card 1 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student14.jpg" alt="CA Inter AIR Ranker" class="achiever-img">
+          </div>
+          <span class="achiever-badge">NATIONAL RANKER</span>
+          <h4 class="achiever-name">CA INTER RANKER</h4>
+          <span class="achiever-title">CA Intermediate Distinction</span>
+        </div>
+
+        <!-- Achiever Card 2 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student15.jpg" alt="CA Foundation Topper" class="achiever-img">
+          </div>
+          <span class="achiever-badge">PUC + CA TOPPER</span>
+          <h4 class="achiever-name">INTEGRATED ACHIEVER</h4>
+          <span class="achiever-title">1st Rank PUC + CA Foundation</span>
+        </div>
+
+        <!-- Achiever Card 3 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student16.jpg" alt="CMA All India Ranker" class="achiever-img">
+          </div>
+          <span class="achiever-badge">CMA AIR RANKER</span>
+          <h4 class="achiever-name">COSTING STAR</h4>
+          <span class="achiever-title">CMA Inter High Scorer</span>
+        </div>
+
+        <!-- Achiever Card 4 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student17.jpg" alt="CS Executive Distinction" class="achiever-img">
+          </div>
+          <span class="achiever-badge">CS EXECUTIVE</span>
+          <h4 class="achiever-name">LAW & COMPLIANCE</h4>
+          <span class="achiever-title">CS Executive Distinction</span>
+        </div>
+
+        <!-- Achiever Card 5 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student18.jpg" alt="ACCA Global Ranker" class="achiever-img">
+          </div>
+          <span class="achiever-badge">ACCA GLOBAL</span>
+          <h4 class="achiever-name">GLOBAL RANKER</h4>
+          <span class="achiever-title">B.Com + ACCA World Prize</span>
+        </div>
+
+        <!-- Achiever Card 6 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student19.jpg" alt="CA Final Achiever" class="achiever-img">
+          </div>
+          <span class="achiever-badge">CHARTERED ACCOUNTANT</span>
+          <h4 class="achiever-name">CA FINAL QUALIFIED</h4>
+          <span class="achiever-title">Auditing & Tax Master</span>
+        </div>
+
+        <!-- Achiever Card 7 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student20.jpg" alt="B.Com + CA Achiever" class="achiever-img">
+          </div>
+          <span class="achiever-badge">DUAL DEGREE</span>
+          <h4 class="achiever-name">B.COM + CA STAR</h4>
+          <span class="achiever-title">Bangalore University Top Scorer</span>
+        </div>
+
+        <!-- Achiever Card 8 -->
+        <div class="achiever-card">
+          <div class="achiever-img-wrapper">
+            <img src="assets/student21.jpg" alt="CA Foundation Topper" class="achiever-img">
+          </div>
+          <span class="achiever-badge">DISTINCTION</span>
+          <h4 class="achiever-name">CA FOUNDATION STAR</h4>
+          <span class="achiever-title">Accounting 95+ Marks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 10. FACULTY & EXPERT MENTORS SHOWCASE -->
   <section id="faculty" class="faculty-section section-padding">
     <div class="container">
@@ -685,12 +772,27 @@
     </div>
   </section>
 
-  <!-- 11. CAMPUS INFRASTRUCTURE & HOSTEL -->
+  <!-- 11. CAMPUS INFRASTRUCTURE & HOSTEL (MULTI-PHOTO VISUAL SHOWCASE) -->
   <section id="campus" class="campus-section section-padding">
     <div class="container">
       <div class="campus-grid">
-        <div class="campus-img-container">
-          <img src="assets/modern_classroom.jpg" alt="National CA Academy Campus Classroom Bangalore" class="campus-main-img">
+        <div class="campus-gallery-grid">
+          <div class="campus-photo-card">
+            <img src="assets/hero_campus.jpg" alt="National CA Academy Main Building Kalyan Nagar">
+            <div class="campus-photo-caption">NCA Main Academic Building, Bangalore</div>
+          </div>
+          <div class="campus-photo-card">
+            <img src="assets/modern_classroom.jpg" alt="Air-Conditioned Smart Classrooms">
+            <div class="campus-photo-caption">Tech-Enabled Smart Classrooms</div>
+          </div>
+          <div class="campus-photo-card">
+            <img src="assets/student31.jpg" alt="Student Study Lounge & Library">
+            <div class="campus-photo-caption">Digital Library & Study Zone</div>
+          </div>
+          <div class="campus-photo-card">
+            <img src="assets/student32.jpg" alt="Hostels & Campus Environment">
+            <div class="campus-photo-caption">Disciplined In-Campus Hostels</div>
+          </div>
         </div>
         <div class="campus-content">
           <span class="section-label">State-of-the-Art Infrastructure</span>
@@ -954,6 +1056,7 @@
     <span class="toast-text">Message sent successfully!</span>
   </div>
 
+  <div id="apply"></div>
   <!-- Admission Enquiry Modal -->
   <div class="modal-overlay" id="enquiryModal">
     <div class="modal-box">
@@ -1000,6 +1103,7 @@
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
     <div class="lightbox-content">
       <div class="lightbox-card">
+        <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close Lightbox"><i class="fas fa-times"></i></button>
         <button class="lightbox-arrow lightbox-prev" id="lightboxPrevBtn" aria-label="Previous Photo"><i class="fas fa-chevron-left"></i></button>
         <button class="lightbox-arrow lightbox-next" id="lightboxNextBtn" aria-label="Next Photo"><i class="fas fa-chevron-right"></i></button>
         

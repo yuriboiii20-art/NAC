@@ -139,7 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showToast(message) {
     if (toastMsg) {
-      toastMsg.querySelector('.toast-text').textContent = message;
+      const toastTextEl = toastMsg.querySelector('.toast-text') || toastMsg;
+      toastTextEl.textContent = message;
       toastMsg.classList.add('show');
       setTimeout(() => {
         toastMsg.classList.remove('show');
@@ -415,13 +416,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Auto-advance photo booth every 4 seconds
+    // Auto-advance photo booth every 1.8 seconds for fast dynamic transition
     setInterval(() => {
       if (!photoLightbox || !photoLightbox.classList.contains('active')) {
         currentBoothIndex = (currentBoothIndex + 1) % boothData.length;
         updateBooth(currentBoothIndex);
       }
-    }, 4000);
+    }, 1800);
 
     updateBooth(currentBoothIndex);
   }

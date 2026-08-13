@@ -306,6 +306,53 @@
     </div>
   </section>
 
+  <!-- Toast Notification Bar -->
+  <div class="toast-msg" id="toastMsg">
+    <i class="fas fa-check-circle highlight-gold"></i>
+    <span class="toast-text">Message sent successfully!</span>
+  </div>
+
+  <!-- Admission Enquiry Modal -->
+  <div class="modal-overlay" id="enquiryModal">
+    <div class="modal-box">
+      <button class="modal-close"><i class="fas fa-times"></i></button>
+      <h3 style="font-size: 1.5rem; color: var(--primary-dark); margin-bottom: 0.5rem;">Apply / Register Online</h3>
+      <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">Submit your details to receive course brochure & fee breakdown</p>
+
+      <form id="modalForm">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" class="form-control" placeholder="Enter student name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number *</label>
+          <input type="tel" class="form-control" placeholder="Enter 10-digit mobile number" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-control" placeholder="Enter email address">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Course of Interest *</label>
+          <select class="form-control" required>
+            <option value="">Select Course</option>
+            <option value="PUC + CA">PUC + CA Integrated</option>
+            <option value="B.Com + CA">B.Com + CA Integrated</option>
+            <option value="CA Foundation">CA Foundation</option>
+            <option value="CA Intermediate">CA Intermediate</option>
+            <option value="CA Final">CA Final</option>
+            <option value="CMA">CMA Foundation & Inter</option>
+            <option value="CS">CS Executive & Professional</option>
+            <option value="ACCA">B.Com + ACCA Global</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+          <i class="fas fa-paper-plane"></i> Submit Application / Enquiry
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer-main">
     <div class="container">
