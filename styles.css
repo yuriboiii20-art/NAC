@@ -961,28 +961,36 @@ ul {
 }
 
 .programs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 2rem;
 }
 
 .program-card {
-  background-color: #ffffff;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  position: sticky;
+  top: 110px;
+  width: 100%;
+  max-width: 860px;
+  margin-bottom: 3.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 2.25rem;
+  box-shadow: 0 20px 45px rgba(15, 35, 56, 0.12), 4px 4px 0px var(--primary-dark);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   display: flex;
   flex-direction: column;
-  position: relative;
-  overflow: hidden;
+  will-change: transform, opacity;
+  perspective: 1000px;
 }
 
 .program-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
   border-color: var(--accent-gold);
+  box-shadow: 0 25px 55px rgba(212, 175, 55, 0.25), 6px 6px 0px var(--primary-dark);
 }
 
 .program-card-badge {

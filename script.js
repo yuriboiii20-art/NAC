@@ -216,8 +216,52 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
-    const stackingCards = gsap.utils.toArray('.stacking-card-item');
+    // Stacking Glass Cards for Integrated & Professional Programs
+    function initProgramsGSAPStacking() {
+      ScrollTrigger.getAll().forEach(st => {
+        if (st.vars && st.vars.id === 'programStackingTrigger') {
+          st.kill();
+        }
+      });
 
+      const visibleProgramCards = Array.from(document.querySelectorAll('.program-card')).filter(card => {
+        return window.getComputedStyle(card).display !== 'none';
+      });
+
+      visibleProgramCards.forEach((card, index) => {
+        if (index < visibleProgramCards.length - 1) {
+          gsap.to(card, {
+            scale: 1 - (visibleProgramCards.length - index) * 0.035,
+            opacity: 0.82,
+            filter: 'blur(2px)',
+            transformOrigin: 'top center',
+            ease: 'none',
+            scrollTrigger: {
+              id: 'programStackingTrigger',
+              trigger: visibleProgramCards[index + 1],
+              start: 'top 75%',
+              end: 'top 20%',
+              scrub: true
+            }
+          });
+        }
+      });
+    }
+
+    initProgramsGSAPStacking();
+
+    // Re-initialize GSAP program stacking whenever filter tabs are clicked
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setTimeout(() => {
+          initProgramsGSAPStacking();
+          ScrollTrigger.refresh();
+        }, 220);
+      });
+    });
+
+    // Stacking Glass Cards for Core Pillars
+    const stackingCards = gsap.utils.toArray('.stacking-card-item');
     stackingCards.forEach((card, index) => {
       if (index < stackingCards.length - 1) {
         gsap.to(card.querySelector('.glass-card-inner'), {
