@@ -280,5 +280,159 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 9. Interactive 37-Image Hero Photo Booth Logic
+  const heroPhotoBooth = document.getElementById('heroPhotoBooth');
+  const boothImg = document.getElementById('boothImg');
+  const boothName = document.getElementById('boothName');
+  const boothCounter = document.getElementById('boothCounter');
+
+  if (heroPhotoBooth && boothImg) {
+    const boothData = [
+      { name: 'MANJUNATH', img: 'assets/chairman_ram.jpg' },
+      { name: 'PRIYA M', img: 'assets/modern_classroom.jpg' },
+      { name: 'RAHUL KUMAR', img: 'assets/hero_campus.jpg' },
+      { name: 'DIVYA SHREE', img: 'assets/logo.jpg' },
+      { name: 'PRAJWALL G', img: 'assets/chairman_ram.jpg' },
+      { name: 'KARTHIK N', img: 'assets/modern_classroom.jpg' },
+      { name: 'HARSHITHA V', img: 'assets/hero_campus.jpg' },
+      { name: 'SNEHA R', img: 'assets/logo.jpg' },
+      { name: 'MANJUNATH', img: 'assets/chairman_ram.jpg' },
+      { name: 'ROHAN SHARMA', img: 'assets/modern_classroom.jpg' },
+      { name: 'VIKASH SINGH', img: 'assets/hero_campus.jpg' },
+      { name: 'KAVYA NAIR', img: 'assets/logo.jpg' },
+      { name: 'ANANYA B', img: 'assets/chairman_ram.jpg' },
+      { name: 'ABHISHEK K', img: 'assets/modern_classroom.jpg' },
+      { name: 'VARUN GOWDA', img: 'assets/hero_campus.jpg' },
+      { name: 'MONIKA SHREE', img: 'assets/logo.jpg' },
+      { name: 'NITHIN KUMAR', img: 'assets/chairman_ram.jpg' },
+      { name: 'SHWETA M', img: 'assets/modern_classroom.jpg' },
+      { name: 'GIRISH R', img: 'assets/hero_campus.jpg' },
+      { name: 'DEEPAK S', img: 'assets/logo.jpg' },
+      { name: 'POOJA L', img: 'assets/chairman_ram.jpg' },
+      { name: 'ARJUN REDDY', img: 'assets/modern_classroom.jpg' },
+      { name: 'TEJASWINI B', img: 'assets/hero_campus.jpg' },
+      { name: 'SACHIN H', img: 'assets/logo.jpg' },
+      { name: 'BHAVANA P', img: 'assets/chairman_ram.jpg' },
+      { name: 'YASHWANTH K', img: 'assets/modern_classroom.jpg' },
+      { name: 'MADHURI V', img: 'assets/hero_campus.jpg' },
+      { name: 'VISHNU DAS', img: 'assets/logo.jpg' },
+      { name: 'CHETAN M', img: 'assets/chairman_ram.jpg' },
+      { name: 'SONAL AGARWAL', img: 'assets/modern_classroom.jpg' },
+      { name: 'KISHORE G', img: 'assets/hero_campus.jpg' },
+      { name: 'MEGHANA R', img: 'assets/logo.jpg' },
+      { name: 'PAVAN KUMAR', img: 'assets/chairman_ram.jpg' },
+      { name: 'SUSHMA N', img: 'assets/modern_classroom.jpg' },
+      { name: 'HEMANTH B', img: 'assets/hero_campus.jpg' },
+      { name: 'SWATI SHARMA', img: 'assets/logo.jpg' },
+      { name: 'MANJUNATH', img: 'assets/chairman_ram.jpg' }
+    ];
+
+    let currentBoothIndex = 8; // Index 8 is 9/37
+
+    function updateBooth(index) {
+      const item = boothData[index];
+      boothImg.src = item.img;
+      if (boothName) boothName.textContent = item.name;
+      if (boothCounter) boothCounter.textContent = `${index + 1}/37`;
+    }
+
+    const boothPrevBtn = document.getElementById('boothPrevBtn');
+    const boothNextBtn = document.getElementById('boothNextBtn');
+    const boothImgContainer = document.getElementById('boothImgContainer');
+
+    if (boothPrevBtn) {
+      boothPrevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentBoothIndex = (currentBoothIndex - 1 + boothData.length) % boothData.length;
+        updateBooth(currentBoothIndex);
+      });
+    }
+
+    if (boothNextBtn) {
+      boothNextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentBoothIndex = (currentBoothIndex + 1) % boothData.length;
+        updateBooth(currentBoothIndex);
+      });
+    }
+
+    // Lightbox Modal References
+    const photoLightbox = document.getElementById('photoLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxName = document.getElementById('lightboxName');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+    const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+    const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+    const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+    function updateLightbox(index) {
+      const item = boothData[index];
+      if (lightboxImg) lightboxImg.src = item.img;
+      if (lightboxName) lightboxName.textContent = item.name;
+      if (lightboxCounter) lightboxCounter.textContent = `${index + 1}/37`;
+    }
+
+    function openLightbox(index) {
+      currentBoothIndex = index;
+      updateLightbox(currentBoothIndex);
+      if (photoLightbox) photoLightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      if (photoLightbox) photoLightbox.classList.remove('active');
+    }
+
+    if (boothImgContainer) {
+      boothImgContainer.addEventListener('click', () => {
+        openLightbox(currentBoothIndex);
+      });
+    }
+
+    if (lightboxPrevBtn) {
+      lightboxPrevBtn.addEventListener('click', () => {
+        currentBoothIndex = (currentBoothIndex - 1 + boothData.length) % boothData.length;
+        updateLightbox(currentBoothIndex);
+        updateBooth(currentBoothIndex);
+      });
+    }
+
+    if (lightboxNextBtn) {
+      lightboxNextBtn.addEventListener('click', () => {
+        currentBoothIndex = (currentBoothIndex + 1) % boothData.length;
+        updateLightbox(currentBoothIndex);
+        updateBooth(currentBoothIndex);
+      });
+    }
+
+    if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (!photoLightbox || !photoLightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') {
+        currentBoothIndex = (currentBoothIndex - 1 + boothData.length) % boothData.length;
+        updateLightbox(currentBoothIndex);
+        updateBooth(currentBoothIndex);
+      } else if (e.key === 'ArrowRight') {
+        currentBoothIndex = (currentBoothIndex + 1) % boothData.length;
+        updateLightbox(currentBoothIndex);
+        updateBooth(currentBoothIndex);
+      } else if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    // Auto-advance photo booth every 4 seconds
+    setInterval(() => {
+      if (!photoLightbox || !photoLightbox.classList.contains('active')) {
+        currentBoothIndex = (currentBoothIndex + 1) % boothData.length;
+        updateBooth(currentBoothIndex);
+      }
+    }, 4000);
+
+    updateBooth(currentBoothIndex);
+  }
 });
 

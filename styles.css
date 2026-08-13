@@ -1977,9 +1977,12 @@ ul {
     gap: 1.5rem;
   }
 
-  /* Hide peeking lead card in hero grid on mobile screens so first page doesn't show next page */
+  /* Hero Sidebar Card on Mobile */
   .hero-grid .lead-card {
-    display: none;
+    display: block;
+    margin-top: 1rem;
+    padding: 1.35rem 1.15rem;
+    border-radius: var(--radius-md);
   }
 
   .hero-badge {
@@ -2299,4 +2302,221 @@ ul {
   .hero-cta-group .btn {
     width: 100%;
   }
+}
+
+/* Hero Social Icons Pill Box Styles */
+.hero-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 50px;
+  background: rgba(15, 35, 56, 0.85);
+  border: 2px solid var(--accent-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-social-pill .social-icon-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  transition: all 0.25s ease;
+}
+
+/* Hover Colors on Laptop View */
+.hero-social-pill .social-icon-btn.whatsapp:hover { background: #25D366 !important; color: #fff !important; border-color: #25D366 !important; transform: translateY(-2px); }
+.hero-social-pill .social-icon-btn.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; color: #fff !important; border-color: #e1306c !important; transform: translateY(-2px); }
+.hero-social-pill .social-icon-btn.facebook:hover { background: #1877F2 !important; color: #fff !important; border-color: #1877F2 !important; transform: translateY(-2px); }
+.hero-social-pill .social-icon-btn.youtube:hover { background: #FF0000 !important; color: #fff !important; border-color: #FF0000 !important; transform: translateY(-2px); }
+.hero-social-pill .social-icon-btn.telegram:hover { background: #0088CC !important; color: #fff !important; border-color: #0088CC !important; transform: translateY(-2px); }
+.hero-social-pill .social-icon-btn.x-twitter:hover { background: #000000 !important; color: #fff !important; border-color: #000000 !important; transform: translateY(-2px); }
+
+/* Mobile View: Actual Brand Colors by Default */
+@media (max-width: 768px) {
+  .hero-social-pill .social-icon-btn.whatsapp { background: #25D366 !important; color: #fff !important; border-color: #25D366 !important; }
+  .hero-social-pill .social-icon-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; color: #fff !important; border-color: #e1306c !important; }
+  .hero-social-pill .social-icon-btn.facebook { background: #1877F2 !important; color: #fff !important; border-color: #1877F2 !important; }
+  .hero-social-pill .social-icon-btn.youtube { background: #FF0000 !important; color: #fff !important; border-color: #FF0000 !important; }
+  .hero-social-pill .social-icon-btn.telegram { background: #0088CC !important; color: #fff !important; border-color: #0088CC !important; }
+  .hero-social-pill .social-icon-btn.x-twitter { background: #000000 !important; color: #fff !important; border-color: #000000 !important; }
+}
+
+/* Full-Screen Photo Lightbox Modal Styles */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 15, 25, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+  width: 90%;
+  margin: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 3px solid var(--accent-gold);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.lightbox-ribbon-top {
+  background: var(--accent-crimson);
+  color: var(--accent-gold);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 25px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.lightbox-img-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 1rem auto;
+  border-radius: 16px;
+  border: 4px solid var(--accent-gold);
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: #fffbeb;
+  padding: 4px;
+}
+
+.lightbox-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-dark);
+  color: var(--accent-gold);
+  border: 2px solid var(--accent-gold);
+  font-size: 1.15rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.lightbox-arrow:hover {
+  background: var(--accent-crimson);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+  left: -55px;
+}
+
+.lightbox-next {
+  right: -55px;
+}
+
+.lightbox-ribbon-bottom {
+  background: var(--accent-crimson);
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.lightbox-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15,35,56,0.06);
+  padding: 0.5rem 1.25rem;
+  border-radius: 10px;
+}
+
+.lightbox-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+}
+
+.lightbox-counter {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: #ffffff;
+  padding: 0.2rem 0.75rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+}
+
+@media (max-width: 600px) {
+  .lightbox-prev { left: -15px; }
+  .lightbox-next { right: -15px; }
 }
