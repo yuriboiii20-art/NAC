@@ -1804,6 +1804,11 @@ ul {
   }
 }
 
+/* Mobile Floating Apply Container Default (Desktop Hidden) */
+.mobile-bottom-apply-container {
+  display: none;
+}
+
 @media (max-width: 768px) {
   /* Section Padding & Spacing Optimization */
   .section-padding {
@@ -1835,6 +1840,28 @@ ul {
 
   .mobile-toggle {
     display: block;
+  }
+
+  /* Hide crowded top header Apply button on mobile screens */
+  .header-actions .header-apply-btn {
+    display: none;
+  }
+
+  /* Show sleek, compact floating Apply Now button at the bottom of mobile screen */
+  .mobile-bottom-apply-container {
+    display: block;
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.25rem;
+    z-index: 998;
+  }
+
+  .mobile-bottom-apply-btn {
+    padding: 0.45rem 1rem;
+    font-size: 0.775rem;
+    height: 38px;
+    box-shadow: 3px 3px 0px var(--primary-dark);
+    border-radius: var(--radius-full);
   }
 
   /* Compact Hero */
