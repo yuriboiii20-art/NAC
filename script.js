@@ -289,52 +289,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (heroPhotoBooth && boothImg) {
     const boothData = [
-      { name: 'MANJUNATH', img: 'assets/chairman_ram.jpg' },
-      { name: 'PRIYA M', img: 'assets/modern_classroom.jpg' },
-      { name: 'RAHUL KUMAR', img: 'assets/hero_campus.jpg' },
-      { name: 'DIVYA SHREE', img: 'assets/logo.jpg' },
-      { name: 'PRAJWALL G', img: 'assets/chairman_ram.jpg' },
-      { name: 'KARTHIK N', img: 'assets/modern_classroom.jpg' },
-      { name: 'HARSHITHA V', img: 'assets/hero_campus.jpg' },
-      { name: 'SNEHA R', img: 'assets/logo.jpg' },
-      { name: 'MANJUNATH', img: 'assets/chairman_ram.jpg' },
-      { name: 'ROHAN SHARMA', img: 'assets/modern_classroom.jpg' },
-      { name: 'VIKASH SINGH', img: 'assets/hero_campus.jpg' },
-      { name: 'KAVYA NAIR', img: 'assets/logo.jpg' },
-      { name: 'ANANYA B', img: 'assets/chairman_ram.jpg' },
-      { name: 'ABHISHEK K', img: 'assets/modern_classroom.jpg' },
-      { name: 'VARUN GOWDA', img: 'assets/hero_campus.jpg' },
-      { name: 'MONIKA SHREE', img: 'assets/logo.jpg' },
-      { name: 'NITHIN KUMAR', img: 'assets/chairman_ram.jpg' },
-      { name: 'SHWETA M', img: 'assets/modern_classroom.jpg' },
-      { name: 'GIRISH R', img: 'assets/hero_campus.jpg' },
-      { name: 'DEEPAK S', img: 'assets/logo.jpg' },
-      { name: 'POOJA L', img: 'assets/chairman_ram.jpg' },
-      { name: 'ARJUN REDDY', img: 'assets/modern_classroom.jpg' },
-      { name: 'TEJASWINI B', img: 'assets/hero_campus.jpg' },
-      { name: 'SACHIN H', img: 'assets/logo.jpg' },
-      { name: 'BHAVANA P', img: 'assets/chairman_ram.jpg' },
-      { name: 'YASHWANTH K', img: 'assets/modern_classroom.jpg' },
-      { name: 'MADHURI V', img: 'assets/hero_campus.jpg' },
-      { name: 'VISHNU DAS', img: 'assets/logo.jpg' },
-      { name: 'CHETAN M', img: 'assets/chairman_ram.jpg' },
-      { name: 'SONAL AGARWAL', img: 'assets/modern_classroom.jpg' },
-      { name: 'KISHORE G', img: 'assets/hero_campus.jpg' },
-      { name: 'MEGHANA R', img: 'assets/logo.jpg' },
-      { name: 'PAVAN KUMAR', img: 'assets/chairman_ram.jpg' },
-      { name: 'SUSHMA N', img: 'assets/modern_classroom.jpg' },
-      { name: 'HEMANTH B', img: 'assets/hero_campus.jpg' },
-      { name: 'SWATI SHARMA', img: 'assets/logo.jpg' },
-      { name: 'MANJUNATH', img: 'assets/chairman_ram.jpg' }
+      { name: 'BINDIYA', img: 'assets/student1.jpg' },
+      { name: 'GOWTHAM', img: 'assets/student2.jpg' },
+      { name: 'JAHNAVI', img: 'assets/student3.jpg' },
+      { name: 'KEVIN', img: 'assets/student4.jpg' },
+      { name: 'KADADI_S', img: 'assets/student5.jpg' },
+      { name: 'KULSUM', img: 'assets/student6.jpg' },
+      { name: 'LIKITHA', img: 'assets/student7.jpg' },
+      { name: 'MANISH', img: 'assets/student8.jpg' },
+      { name: 'MANJUNATH', img: 'assets/student9.jpg' },
+      { name: 'MOUNT_FORT', img: 'assets/student10.jpg' },
+      { name: 'SHASHANK', img: 'assets/student11.jpg' },
+      { name: 'SHIVANI', img: 'assets/student12.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student13.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student14.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student15.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student16.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student17.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student18.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student19.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student20.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student21.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student22.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student23.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student24.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student26.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student27.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student28.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student29.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student30.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student31.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student32.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student33.jpg' },
+      { name: 'NCA RANKER', img: 'assets/student34.jpg' }
     ];
 
-    let currentBoothIndex = 8; // Index 8 is 9/37
+    let currentBoothIndex = 0;
 
     function updateBooth(index) {
       const item = boothData[index];
       boothImg.src = item.img;
       if (boothName) boothName.textContent = item.name;
-      if (boothCounter) boothCounter.textContent = `${index + 1}/37`;
+      if (boothCounter) boothCounter.textContent = `${index + 1}/${boothData.length}`;
     }
 
     const boothImgContainer = document.getElementById('boothImgContainer');
@@ -359,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = boothData[index];
       if (lightboxImg) lightboxImg.src = item.img;
       if (lightboxName) lightboxName.textContent = item.name;
-      if (lightboxCounter) lightboxCounter.textContent = `${index + 1}/37`;
+      if (lightboxCounter) lightboxCounter.textContent = `${index + 1}/${boothData.length}`;
     }
 
     function openLightbox(index) {
