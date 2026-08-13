@@ -234,6 +234,9 @@ ul {
   align-items: center;
   gap: 0.75rem;
   overflow: hidden;
+  position: relative;
+  flex: 1;
+  max-width: 760px;
 }
 
 .ticker-badge {
@@ -246,12 +249,53 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  flex-shrink: 0;
+  z-index: 2;
 }
 
-.ticker-text {
+.ticker-train-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+  display: flex;
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+.ticker-train {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  animation: ticker-train-scroll 24s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.ticker-train:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   color: #e2e8f0;
   font-weight: 500;
-  white-space: nowrap;
+  font-size: 0.825rem;
+}
+
+.ticker-item i {
+  color: var(--accent-gold);
+}
+
+@keyframes ticker-train-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .top-contacts {
