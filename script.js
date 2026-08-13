@@ -211,4 +211,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(statsSection);
   }
+
+  // 8. GSAP ScrollTrigger Vertical Stacking Glass Cards Animation
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const stackingCards = gsap.utils.toArray('.stacking-card-item');
+
+    stackingCards.forEach((card, index) => {
+      if (index < stackingCards.length - 1) {
+        gsap.to(card.querySelector('.glass-card-inner'), {
+          scale: 1 - (stackingCards.length - index) * 0.035,
+          opacity: 0.75,
+          filter: 'blur(3px)',
+          transformOrigin: 'top center',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: stackingCards[index + 1],
+            start: 'top 75%',
+            end: 'top 20%',
+            scrub: true
+          }
+        });
+      }
+    });
+  }
 });
+

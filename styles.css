@@ -1119,39 +1119,110 @@ ul {
   gap: 2rem;
 }
 
-.pillar-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-md);
-  padding: 2rem;
-  transition: all var(--transition-normal);
+/* ==========================================================================
+   GSAP VERTICAL STACKING GLASS CARDS
+   ========================================================================== */
+.stacking-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 2rem;
 }
 
-.pillar-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+.stacking-card-item {
+  position: sticky;
+  top: 110px;
+  width: 100%;
+  max-width: 860px;
+  margin-bottom: 3.5rem;
+  will-change: transform, opacity;
+  perspective: 1000px;
+}
+
+.glass-card-inner {
+  background: rgba(21, 45, 70, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.glass-card-inner:hover {
   border-color: var(--accent-gold);
-  transform: translateY(-4px);
+  box-shadow: 0 25px 60px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.pillar-number {
+.glass-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.glass-card-number {
   font-family: 'Outfit', sans-serif;
-  font-size: 2rem;
   font-weight: 800;
+  font-size: 0.85rem;
   color: var(--accent-gold);
-  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  background: rgba(212, 175, 55, 0.15);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--accent-gold);
 }
 
-.pillar-title {
-  font-size: 1.25rem;
+.glass-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-dark);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  box-shadow: 3px 3px 0px var(--accent-gold);
+}
+
+.glass-card-title {
+  font-size: 1.65rem;
   color: #ffffff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
-.pillar-desc {
-  font-size: 0.9rem;
+.glass-card-text {
+  font-size: 1rem;
   color: #cbd5e1;
-  line-height: 1.6;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.glass-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.glass-tag {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.glass-tag i {
+  color: var(--accent-gold);
 }
 
 /* Internship & Live Projects Callout Banner */
